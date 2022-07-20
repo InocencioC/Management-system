@@ -9,7 +9,19 @@ class Usuarios extends CI_Controller {
         //Definide if have a session
     }
 public function index() {
-    $data = array(
+
+        $data = array(
+        
+        'titulo' => 'Usuários cadastrados',
+
+        'styles' => array (
+            'vendor/datatables/dataTables.bootstrap4.min.css', 
+        ),
+        'scripts' => array(
+            'vendor/datatables/jquery.dataTables.min.js',
+            'vendor/datatables/dataTables.bootstrap4.min.js',
+            'vendor/datatables/app.js'
+        ),
         'usuarios' => $this->ion_auth->users()->result(),
     );
 
