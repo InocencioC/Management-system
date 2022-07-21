@@ -35,21 +35,22 @@ public function index() {
     $this->load->view('layout/footer');
 }
 
-public function edit($user_id = NULL) {
+public function edit($usuario_id = NULL) {
 
-if(!$user_id || !$this->ion_auth->user($user_id)->row())  {
+if(!$usuario_id || !$this->ion_auth->user($usuario_id)->row())  {
 
     exit('Usuario não encontrado');
 } else {
 
     $data = array(
         'titulo' => 'Editar usuário',
-        'usuario' => $this->ion_auth->user($user_id)->row(),
+        'usuario' => $this->ion_auth->user($usuario_id)->row(),
+        'perfil_usuario' =>$this->ion_auth->get_users_groups($usuario_id)->row(),
     );
 
    // echo '<pre>';
-   // print_r($data['usuario']);
-   // exit();
+   // print_r($data['perfil_usuario']);
+   //  exit();
 
     $this->load->view('layout/header', $data);
     $this->load->view('usuarios/edit');
