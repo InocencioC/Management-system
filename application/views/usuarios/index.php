@@ -29,7 +29,7 @@
                       <th>Usuário</th>
                       <th>Login</th>
                       <th>Ativo</th>
-                      <th class="text-right" >Acções</th>
+                      <th class="text-right no-sort" >Acções</th>
                     </tr>
                   </thead>      
                   <tbody>
