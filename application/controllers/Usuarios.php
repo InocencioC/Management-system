@@ -41,6 +41,29 @@ if(!$usuario_id || !$this->ion_auth->user($usuario_id)->row())  {
 
     exit('Usuario não encontrado');
 } else {
+ /*
+    [first_name] => Admin
+    [last_name] => istrator
+    [email] => admin@admin.com
+    [username] => administrator
+    [usuario] => 1
+    [perfil_usuario] => 1
+    [password] => 
+    [confirm_password] => 
+    [usuario_id] => 1
+
+    */
+
+    //echo '<pre>';
+    //print_r($this->input->post());
+    //exit();
+
+    $this->form_validation->set_rules('first_name', '', 'trim|required');
+    if($this->form_validation->run()) {
+
+        exit('Validado');
+    }else {
+
 
     $data = array(
         'titulo' => 'Editar usuário',
@@ -48,13 +71,10 @@ if(!$usuario_id || !$this->ion_auth->user($usuario_id)->row())  {
         'perfil_usuario' =>$this->ion_auth->get_users_groups($usuario_id)->row(),
     );
 
-   // echo '<pre>';
-   // print_r($data['perfil_usuario']);
-   //  exit();
-
     $this->load->view('layout/header', $data);
     $this->load->view('usuarios/edit');
     $this->load->view('layout/footer');
   }
  }
+}
 }
