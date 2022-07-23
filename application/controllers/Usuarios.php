@@ -100,6 +100,7 @@ if(!$usuario_id || !$this->ion_auth->user($usuario_id)->row())  {
 
             $this->ion_auth->remove_from_group($perfil_usuario_db->id, $usuario_id);
             $this->ion_auth->add_to_group($perfil_usuario_post, $usuario_id);
+            
         }
 
         $this->session->set_flashdata('sucesso', 'Dados salvos com sucesso');
@@ -112,7 +113,7 @@ if(!$usuario_id || !$this->ion_auth->user($usuario_id)->row())  {
     $data = array(
         'titulo' => 'Editar usuário',
         'usuario' => $this->ion_auth->user($usuario_id)->row(),
-        'perfil_usuario' =>$this->ion_auth->get_users_groups($usuario_id)->row(),
+        'perfil_usuario' => $this->ion_auth->get_users_groups($usuario_id)->row(),
     );
 
     $this->load->view('layout/header', $data);

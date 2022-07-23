@@ -58,7 +58,7 @@
   <div class="col-md-4">
   <label>Ativo</label>
 
-  <select class="form-control" name="usuario">
+  <select class="form-control" name="active">
 
     <option value="0" <?php echo ($usuario->active == 0) ? 'selected' : '' ?>>Não</option>
     <option value="1" <?php echo ($usuario->active == 1) ? 'selected' : '' ?>>Sim</option>
@@ -69,7 +69,7 @@
   <div class="col-md-4">
   <label>Perfil de acesso</label>
 
-  <select class="form-control" name="perfil_usuario">
+  <select class="custom-select" name="perfil_usuario">
 
     <option value="2" <?php echo ($perfil_usuario->id == 2) ? 'selected' : '' ?>>Vendedor</option>
     <option value="1" <?php echo ($perfil_usuario->id == 1) ? 'selected' : '' ?>>Admnistrador</option>
