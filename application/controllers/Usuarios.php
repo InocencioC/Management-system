@@ -173,6 +173,26 @@ if(!$usuario_id || !$this->ion_auth->user($usuario_id)->row())  {
 }
 }
 
+public function del($usuario_id = NULL) {
+   
+    if(!$usuario_id || !$this->ion_auth->user($usuario_id)->row()) {
+       
+        $this->session->set_flashdata('error', 'Usuário não encontrado');
+        redirect('usuarios');
+    }
+    if($this->ion_auth->is_admin($usuario_id)) {
+        $this->session->set_flashdata('error', 'O administrador não pode ser excluído');
+        redirect('usuarios');
+    }
+
+    if ($this->ion_auth->delete_user($usuario_id)) {
+        $this->session->set_flashdata('Sucesso', 'Usuário excluído com sucesso');
+        redirect('usuarios');
+
+    }
+
+}
+
 public function email_check($email) {
 
     $usuario_id = $this->input->post('usuario_id');
