@@ -1,4 +1,6 @@
- <!-- Footer -->
+<?php if(!$this->router->fetch_class() == 'Login' ): ?>
+
+   <!-- Footer -->
  <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
@@ -7,6 +9,8 @@
         </div>
       </footer>
       <!-- End of Footer -->
+
+<?php endif; ?>
 
     </div>
     <!-- End of Content Wrapper -->
