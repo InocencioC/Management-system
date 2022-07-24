@@ -1,6 +1,4 @@
 <?php $this->load->view('layout/sidebar'); ?>
-
-?>
    
 
       <!-- Main Content -->
