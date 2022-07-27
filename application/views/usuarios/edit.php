@@ -22,25 +22,25 @@
             </div>
             <div class="card-body">
                 
-            <form method="POST" name="form_edit">
+            <form class="user" method="POST" name="form_edit">
               
   <div class="form-group row">
 
     <div class="col-md-4">
     <label>Nome</label>
-    <input type="text" class="form-control" name="first_name" placeholder="Seu nome" value="<?php echo $usuario->first_name;  ?>" >
+    <input type="text" class="form-control form-control-user" name="first_name" placeholder="Seu nome" value="<?php echo $usuario->first_name;  ?>" >
    <?php echo form_error('first_name', '<small class="form-text text-danger">','</small>');  ?>
   </div>
 
   <div class="col-md-4">
     <label>Sobrenome</label>
-    <input type="text" class="form-control" name="last_name" placeholder="Seu sobrenome" value="<?php echo $usuario->last_name;  ?>" >
+    <input type="text" class="form-control form-control-user" name="last_name" placeholder="Seu sobrenome" value="<?php echo $usuario->last_name;  ?>" >
     <?php echo form_error('last_name', '<small class="form-text text-danger">','</small>');  ?>
   </div>
   
   <div class="col-md-4">
     <label>Email</label>
-    <input type="email" class="form-control" name="email" placeholder="Seu email" value="<?php echo $usuario->email;  ?>" >
+    <input type="email" class="form-control form-control-user" name="email" placeholder="Seu email" value="<?php echo $usuario->email;  ?>" >
     <?php echo form_error('email', '<small class="form-text text-danger">','</small>');  ?>
   </div>
     
@@ -79,20 +79,6 @@
 
 </div>
 
-<div class="form-group row">
-
-<div class="col-md-6">
-  <label>Senha</label>
-  <input type="password" class="form-control" name="password" placeholder="Sua senha">
-  <?php echo form_error('password', '<small class="form-text text-danger">','</small>');  ?>
-</div>
-<div class="col-md-6">
-  <label>Confirme</label>
-  <input type="password" class="form-control" name="confirm_password" placeholder="Confirme sua senha">
-  <?php echo form_error('confirm_password', '<small class="form-text text-danger">','</small>');  ?>
-</div>
-
-<input type="hidden" name="usuario_id" value="<?php echo $usuario->id ?>">
 
 </div>
   <div class="form-check">    
