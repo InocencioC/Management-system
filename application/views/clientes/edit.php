@@ -52,14 +52,23 @@
 <!--//////////////////////////////////////////////////////////-->
 <div class="form-group row mb-3">
 <div class="col-md-3">
-  <label>CPF ou CNPJ</label>
-    <input type="text" class="form-control form-control-user cnpj" name="cliente_cpf_cnpj" placeholder="CPF ou CNPJ" value="<?php echo $cliente->cliente_cpf_cnpj;  ?>" >
+  <?php if($cliente->cliente_tipo == 1): ?>
+    <label>CPF</label>
+    <?php else: ?>
+    <label>CNPJ</label>
+  <?php endif; ?>
+
+    <input type="text" class="form-control form-control-user cnpj" name="cliente_cpf_cnpj" placeholder="<?php echo ($cliente->cliente_tipo == 1 ? 'CPF do cliente' : 'CNPJ do cliente');?>" value="<?php echo $cliente->cliente_cpf_cnpj;  ?>" >
     <?php echo form_error('cliente_cpf_cnpj', '<small class="form-text text-danger">','</small>');  ?>
   </div> 
   
   <div class="col-md-3">
-    <label>RG ou I.E</label>
-    <input type="text" class="form-control form-control-user" name="cliente_rg_ie" placeholder="RG ou I.E" value="<?php echo $cliente->cliente_rg_ie;  ?>" >
+  <?php if($cliente->cliente_tipo == 1): ?>
+    <label>RG</label>
+    <?php else: ?>
+    <label>Inscrição estadual</label>
+  <?php endif; ?>
+    <input type="text" class="form-control form-control-user" name="cliente_rg_ie" placeholder="<?php echo ($cliente->cliente_tipo == 1 ? 'RG do cliente' : 'Inscrição estadual do cliente');?>" value="<?php echo $cliente->cliente_rg_ie;  ?>" >
     <?php echo form_error('cliente_rg_ie', '<small class="form-text text-danger">','</small>');  ?>
   </div> 
 
