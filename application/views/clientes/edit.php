@@ -21,6 +21,7 @@
             <div class="card-body">
                 
             <form class="user" method="POST" name="form_edit">
+              <p><strong><i class="fas fa-clock"></i>&nbsp;&nbsp;Última alteração: </strong> <?php echo formata_data_banco_com_hora($cliente->cliente_data_alteracao);?></p>
               
             <fieldset class="mt-4 border p-2">
 
